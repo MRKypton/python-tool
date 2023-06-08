@@ -1,6 +1,10 @@
 import random
+import os
 
-def main(*args):
+def clear_console():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def main(*args)->void:
     results = []
     
     for arg in args:
@@ -12,8 +16,16 @@ def main(*args):
             result.append(arg - (result[0] + result[1]))
         
         results.append(result)
-    
-    return results
+        print(result)
 
-print(main(90,80,75))
-print(main(72,86,98))
+clear_console()
+
+while True:
+    arg = int(input("What number do you want me to generate: "))
+    if(70<arg<100):
+        main(arg)
+        input("\nPress Enter to continue...")
+    else:
+        print("Error : Your number must in range 71 - 99")
+        input("\nPress Enter to continue...")
+    clear_console()

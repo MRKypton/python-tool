@@ -16,3 +16,4 @@ def main(*args):
     return results
 
 print(main(90,80,75))
+print(main(72,86,98))
